@@ -6,10 +6,10 @@
         "use": "@vercel/node"
       }
     ],
-    "routes": [
+    "rewrites": [
       {
-        "src": "/api/(.*)",
-        "dest": "api/$1"
+        "source": "/api/(.*)",
+        "destination": "api/$1"
       }
     ],
     "headers": [
@@ -18,7 +18,7 @@
         "headers": [
           {
             "key": "Access-Control-Allow-Origin",
-            "value": "https://filmaatic.netlify.app" 
+            "value": "https://filmaatic.netlify.app"
           },
           {
             "key": "Access-Control-Allow-Methods",
@@ -26,7 +26,11 @@
           },
           {
             "key": "Access-Control-Allow-Headers",
-            "value": "Content-Type"
+            "value": "Content-Type, Authorization"
+          },
+          {
+            "key": "Access-Control-Allow-Credentials",
+            "value": "true"
           }
         ]
       }
